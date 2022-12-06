@@ -1,3 +1,3 @@
-# Bachelor porject - Blunt airfoil
-## Emil, Søren & Magnus 
-## 2023
+# Bachelor project - Blunt airfoil
+Emil, Søren & Magnus 
+2023
