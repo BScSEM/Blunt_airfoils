@@ -11,5 +11,3 @@ set(0,'defaultTextInterpreter','latex');
 plot(U,h)
 xlabel('Velocity')
 ylabel('Height [mm]')
-
-%Test kommentar
