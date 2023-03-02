@@ -16,6 +16,7 @@ af = naca4gen(iaf);
 plot(af.xU,af.zU,'bo-')
 hold on
 plot(af.xL,af.zL,'ro-')
+axis('equal')
 
 fileans = input('Do you want to export the airfoil coordinates to a .txt file? [yes/no]\n\n','s');
 fileans = upper(fileans);
@@ -41,6 +42,3 @@ if strcmp(fileans,'YES')
 
 end
 
-
-
-axis equal
