@@ -1,7 +1,7 @@
 %% Airfoil generator
 clc; clear variables; close all;
 
-iaf.designation='0018';
+iaf.designation='4412';
 % designation='0008';
 iaf.n=30;
 iaf.HalfCosineSpacing=1;
@@ -16,13 +16,14 @@ af = naca4gen(iaf);
 plot(af.xU,af.zU,'bo-')
 hold on
 plot(af.xL,af.zL,'ro-')
+axis equal
 
 fileans = input('Do you want to export the airfoil coordinates to a .txt file? [yes/no]\n\n','s');
 fileans = upper(fileans);
 if strcmp(fileans,'YES')
     foilsize = input('What should the chordlength be in [mm]?\n\n');
 
-    Foilchords = [zeros(size([af .xU; af .xL])), [af .xU; af .xL], [af .zU; af .zL]] * foilsize;
+    Foilchords = [zeros(size([af .xU; af .xL(2:end)])), [af .xU; af .xL(2:end)], [af .zU; af .zL(2:end)]] * foilsize;
     Foilchords = Foilchords(1:end,:);
 
     filename = input('What should the filename be?\n\n','s');
@@ -43,4 +44,3 @@ end
 
 
 
-axis equal
