@@ -1,7 +1,7 @@
 %% Airfoil generator
 clc; clear variables; close all;
 
-iaf.designation='4412';
+iaf.designation='3215';
 % designation='0008';
 iaf.n=30;
 iaf.HalfCosineSpacing=1;
