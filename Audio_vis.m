@@ -38,7 +38,7 @@ P = abs(YP).^2;
 % Figure
 figure()
 stem(fspan,P,'.','MarkerFaceColor','blue','MarkerSize',15)
-title('Power Spectrum')
+title('Power Spectrum',Name)
 xlabel('Frequency [Hz]')
 ylabel('Power')
 grid
@@ -51,6 +51,7 @@ fprintf('The dominating frequency of the vibrations are: %.1f Hz\n',domf)
 
 figure()
 loglog(fspan,P)
+title(Name)
 
 
 
