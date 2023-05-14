@@ -1,4 +1,13 @@
 function Audio_vis(data,fs,Name)
+% Performs Fourier transform on input data, plots data with respect to
+% time, plots power sptectrum in log and non-log format
+% Input:
+%       data: Recorded data, nx1 vector
+%       fs: Sampling frequency of data, scalar
+%       Name: Name of input data, 1x1 Cell array
+%
+
+
 
 % Variables of data
 N = length(data);       % Number of samples
@@ -11,6 +20,7 @@ f_min = 1/T;            % Minimum frequency
 fspan = linspace(f_min,f_max,N/2);
 tspan = 0:dt:T-dt;
 
+% Audio data plot
 figure()
 set(0,'defaultTextInterpreter','latex');
 plot(tspan,data);
@@ -21,8 +31,6 @@ xlim([0 T])
 
 
 
-
-
 % Fourier transform
 FT = fft(data)'/N;
 
@@ -30,12 +38,14 @@ FT = fft(data)'/N;
 FT(1) = [];
 
 % Extract dectable frequencies
-YP = FT(1:N/2);
+YP = FT(1:floor(N/2));
+
+
 
 % Determine power
 P = abs(YP).^2;
 
-% Figure
+% FT plot
 figure()
 stem(fspan,P,'.','MarkerFaceColor','blue','MarkerSize',15)
 title('Power Spectrum',Name)
@@ -46,12 +56,15 @@ grid
 % Extract dominant frequency
 domf_i = find(P == max(P));
 domf = fspan(domf_i);
-fprintf('The dominating frequency of the vibrations are: %.1f Hz\n',domf)
+fprintf('The dominating frequency of the %s are %.1f Hz\n',string(Name),domf)
 
 
+%% FT loglog
 figure()
 loglog(fspan,P)
 title(Name)
+xlabel('Frequency [Hz]')
+grid
 
 
 
