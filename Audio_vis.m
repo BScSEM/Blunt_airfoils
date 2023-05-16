@@ -1,4 +1,4 @@
-function Audio_vis(data,fs,Name)
+function Audio_vis(data,fs,Name,save_option)
 % Performs Fourier transform on input data, plots data with respect to
 % time, plots power sptectrum in log and non-log format
 % Input:
@@ -28,7 +28,9 @@ xlabel('time [s]')
 title('Audio recording',Name)
 ylabel('Amplitude')
 xlim([0 T])
-
+if save_option == 1 
+% print(Audio_vis_output\Name, '-depsc');  
+end
 
 
 % Fourier transform
