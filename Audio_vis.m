@@ -1,4 +1,4 @@
-function Audio_vis(data,fs,Name,option)
+function [results] = Audio_vis(data,fs,Name,option)
 % Performs Fast Fourier transform on input data, plots data with respect to
 % time, plots power sptectrum in log and non-log format
 % Input:
@@ -6,6 +6,8 @@ function Audio_vis(data,fs,Name,option)
 %       fs: Sampling frequency of data, scalar
 %       Name: Name of input data, 1x1 Cell array
 %       option
+% Output:
+% 
 
 
 
@@ -25,7 +27,9 @@ tspan = 0:dt:T-dt;
 
 %% Audio data plot
 if option.recording == 1
-figure()
+% figure()
+% tiledlayout('flow')
+nexttile
 plot(tspan,data);
 xlabel('time [s]')
 title('Audio recording',Name)
@@ -65,10 +69,11 @@ xlim([0 0.15e4])
 end
 
 % Extract dominant frequency
+if option.print == 1
 domf_i = find(P == max(P));
 domf = fspan(domf_i);
 fprintf('The dominating frequency of the %s are %.1f Hz\n',string(Name),domf)
-
+end
 
 %% FFT loglog
 if option.loglog == 1
@@ -81,8 +86,9 @@ grid
 end
 
 
-
-
+%%
+results.P = P;
+results.fspan = fspan;
 
 
 
