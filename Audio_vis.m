@@ -5,9 +5,9 @@ function [results] = Audio_vis(data,fs,Name,option)
 %       data: Recorded data, nx1 vector
 %       fs: Sampling frequency of data, scalar
 %       Name: Name of input data, 1x1 Cell array
-%       option
+%       option: Options to activate or deactivate features, struct
 % Output:
-% 
+%       results: Frequency power from FFT, aswell as the time- and frequency-span 
 
 
 
@@ -27,9 +27,7 @@ tspan = 0:dt:T-dt;
 
 %% Audio data plot
 if option.recording == 1
-% figure()
-% tiledlayout('flow')
-nexttile
+figure()
 plot(tspan,data);
 xlabel('time [s]')
 title('Audio recording',Name)
@@ -89,6 +87,7 @@ end
 %%
 results.P = P;
 results.fspan = fspan;
+results.tspan = tspan;
 
 
 
