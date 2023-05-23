@@ -4,29 +4,36 @@ clc,clear,close all
 [main.Background_1.data,main.Background_1.fs] = audioread("C:\Dokumenter_ny\Bachelor project\Audio_recordings\Background_1.wav");
 % [main.Background_2.data,main.Background_2.fs] = audioread("C:\Dokumenter_ny\Bachelor project\Audio_recordings\Background_2.wav");
 
-[main.T_0012_s_a0_01.data,main.T_0012_s_a0_01.fs] = audioread("C:\Dokumenter_ny\Bachelor project\Audio_recordings\T_0012_s_a0_01.wav");
+[main.T_0012_s_a0_01.data,main.T_0012_s_a0_01.fs] = audioread("C:\Users\emilb\Desktop\Bachelorprojekt\Lydmålinger\Standard\T_0012_s_a0_01.wav");
 % [main.T_0012_s_a0_02.data,main.T_0012_s_a0_02.fs] = audioread("C:\Dokumenter_ny\Bachelor project\Audio_recordings\T_0012_s_a0_02.wav");
-[main.T_0012_b_a0_01.data,main.T_0012_b_a0_01.fs] = audioread("C:\Dokumenter_ny\Bachelor project\Audio_recordings\T_0012_b_a0_01.wav");
-[main.T_0012_s_a10_01.data,main.T_0012_s_a10_01.fs] = audioread("C:\Dokumenter_ny\Bachelor project\Audio_recordings\T_0012_s_a10_01.wav");
-[main.T_0012_b_a10_01.data,main.T_0012_b_a10_01.fs] = audioread("C:\Dokumenter_ny\Bachelor project\Audio_recordings\T_0012_b_a10_01.wav");
+[main.T_0012_b_a0_01.data,main.T_0012_b_a0_01.fs] = audioread("C:\Users\emilb\Desktop\Bachelorprojekt\Lydmålinger\Standard\T_0012_b_a0_01.wav");
+[main.T_0012_s_a10_01.data,main.T_0012_s_a10_01.fs] = audioread("C:\Users\emilb\Desktop\Bachelorprojekt\Lydmålinger\Standard\T_0012_s_a10_01.wav");
+[main.T_0012_s_a15_01.data,main.T_0012_s_a15_01.fs] = audioread("C:\Users\emilb\Desktop\Bachelorprojekt\Lydmålinger\Standard\T_0012_s_a15.wav")
+[main.T_0012_b_a10_01.data,main.T_0012_b_a10_01.fs] = audioread("C:\Users\emilb\Desktop\Bachelorprojekt\Lydmålinger\Standard\T_0012_b_a10_01.wav");
 % [main.T_0012_s_a10_02.data,main.T_0012_s_a10_02.fs] = audioread("C:\Dokumenter_ny\Bachelor project\Audio_recordings\T_0012_s_a10_02.wav");
-
-[main.T_5512_s_a0_01.data,main.T_5512_s_a0_01.fs] = audioread("C:\Dokumenter_ny\Bachelor project\Audio_recordings\T_5512_s_a0_01.wav");
-[main.T_5512_b_a0_01.data,main.T_5512_b_a0_01.fs] = audioread("C:\Dokumenter_ny\Bachelor project\Audio_recordings\T_5512_b_a0_01.wav");
-[main.T_5512_s_a10_01.data,main.T_5512_s_a10_01.fs] = audioread("C:\Dokumenter_ny\Bachelor project\Audio_recordings\T_5512_s_a10_01.wav");
-[main.T_5512_b_a10_01.data,main.T_5512_b_a10_01.fs] = audioread("C:\Dokumenter_ny\Bachelor project\Audio_recordings\T_5512_b_a10_01.wav");
+[main.T_0012_b_a15_01.data,main.T_0012_b_a15_01.fs] = audioread("C:\Users\emilb\Desktop\Bachelorprojekt\Lydmålinger\Standard\T_0012_b_a15.wav")
 
 
-[main.T_63418_s_a0_01.data,main.T_63418_s_a0_01.fs] = audioread("C:\Dokumenter_ny\Bachelor project\Audio_recordings\T_63418_s_a0_01.wav");
-[main.T_63418_b_a0_01.data,main.T_63418_b_a0_01.fs] = audioread("C:\Dokumenter_ny\Bachelor project\Audio_recordings\T_63418_b_a0_01.wav");
-[main.T_63418_s_a10_01.data,main.T_63418_s_a10_01.fs] = audioread("C:\Dokumenter_ny\Bachelor project\Audio_recordings\T_63418_s_a10_01.wav");
-[main.T_63418_b_a10_01.data,main.T_63418_b_a10_01.fs] = audioread("C:\Dokumenter_ny\Bachelor project\Audio_recordings\T_63418_b_a10_01.wav");
+[main.T_5512_s_a0_01.data,main.T_5512_s_a0_01.fs] = audioread("C:\Users\emilb\Desktop\Bachelorprojekt\Lydmålinger\Standard\T_5512_s_a0_01.wav");
+[main.T_5512_b_a0_01.data,main.T_5512_b_a0_01.fs] = audioread("C:\Users\emilb\Desktop\Bachelorprojekt\Lydmålinger\Standard\T_5512_b_a0_01.wav");
+[main.T_5512_s_a10_01.data,main.T_5512_s_a10_01.fs] = audioread("C:\Users\emilb\Desktop\Bachelorprojekt\Lydmålinger\Standard\T_5512_s_a10_01.wav");
+[main.T_5512_b_a10_01.data,main.T_5512_b_a10_01.fs] = audioread("C:\Users\emilb\Desktop\Bachelorprojekt\Lydmålinger\Standard\T_5512_b_a10_01.wav");
+[main.T_5512_b_a15_01.data,main.T_5512_b_a15_01.fs] = audioread("‪C:\Users\emilb\Desktop\Bachelorprojekt\Lydmålinger\Standard\T_5512_b_a15.wav");
+[main.T_5512_s_a15_01.data,main.T_5512_s_a15_01.fs] = audioread("C:\Users\emilb\Desktop\Bachelorprojekt\Lydmålinger\Standard\T_5512_s_a15.wav");
 
-[main.T_64421_s_a0_01.data,main.T_64421_s_a0_01.fs] = audioread("C:\Dokumenter_ny\Bachelor project\Audio_recordings\T_64421_s_a0_01.wav");
-[main.T_64421_b_a0_01.data,main.T_64421_b_a0_01.fs] = audioread("C:\Dokumenter_ny\Bachelor project\Audio_recordings\T_64421_b_a0_01.wav");
-[main.T_64421_s_a10_01.data,main.T_64421_s_a10_01.fs] = audioread("C:\Dokumenter_ny\Bachelor project\Audio_recordings\T_64421_s_a10_01.wav");
-[main.T_64421_b_a10_01.data,main.T_64421_b_a10_01.fs] = audioread("C:\Dokumenter_ny\Bachelor project\Audio_recordings\T_64421_b_a10_01.wav");
+[main.T_63418_s_a0_01.data,main.T_63418_s_a0_01.fs] = audioread("C:\Users\emilb\Desktop\Bachelorprojekt\Lydmålinger\Standard\T_63-418_s_a0_01.wav");
+[main.T_63418_b_a0_01.data,main.T_63418_b_a0_01.fs] = audioread("C:\Users\emilb\Desktop\Bachelorprojekt\Lydmålinger\Standard\T_63-418_b_a0_01.wav");
+[main.T_63418_s_a10_01.data,main.T_63418_s_a10_01.fs] = audioread("C:\Users\emilb\Desktop\Bachelorprojekt\Lydmålinger\Standard\T_63-418_s_a10_01.wav");
+[main.T_63418_b_a10_01.data,main.T_63418_b_a10_01.fs] = audioread("C:\Users\emilb\Desktop\Bachelorprojekt\Lydmålinger\Standard\T_63-418_b_a10_01.wav");
+[main.T_63418_s_a15_01.data,main.T_63418_s_a15_01.fs] = audioread("C:\Users\emilb\Desktop\Bachelorprojekt\Lydmålinger\Standard\T_63-418_s_a15.wav");
+[main.T_63418_b_a15_01.data,main.T_63418_b_a15_01.fs] = audioread("C:\Users\emilb\Desktop\Bachelorprojekt\Lydmålinger\Standard\T_63-418_b_a15.wav");
 
+[main.T_64421_s_a0_01.data,main.T_64421_s_a0_01.fs] = audioread("C:\Users\emilb\Desktop\Bachelorprojekt\Lydmålinger\Standard\T_64-421_s_a0_01.wav");
+[main.T_64421_b_a0_01.data,main.T_64421_b_a0_01.fs] = audioread("‪C:\Users\emilb\Desktop\Bachelorprojekt\Lydmålinger\Standard\T_64-421_b_a0_01.wav");
+[main.T_64421_s_a10_01.data,main.T_64421_s_a10_01.fs] = audioread("C:\Users\emilb\Desktop\Bachelorprojekt\Lydmålinger\Standard\T_64-421_s_a10_01.wav");
+[main.T_64421_b_a10_01.data,main.T_64421_b_a10_01.fs] = audioread("C:\Users\emilb\Desktop\Bachelorprojekt\Lydmålinger\Standard\T_64-421_b_a10_01.wav");
+[main.T_64421_s_a15_01.data,main.T_64421_s_a15_01.fs] = audioread("C:\Users\emilb\Desktop\Bachelorprojekt\Lydmålinger\Standard\T_64-421_s_a15_01.wav");
+[main.T_64421_b_a15_01.data,main.T_64421_b_a15_01.fs] = audioread("C:\Users\emilb\Desktop\Bachelorprojekt\Lydmålinger\Standard\T_64-421_b_a15.wav");
 
 % [main.w.data,main.w.fs] = audioread("C:\Dokumenter_ny\Bachelor project\Div\Test audio recordings\WT_mic_just_outside_low_gain.wav");
 
