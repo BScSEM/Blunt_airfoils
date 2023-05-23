@@ -9,13 +9,8 @@ fn_mean_drag = fieldnames(mean_drag);
 
 
 
-
-%%
-
 set(0,'defaultTextInterpreter','latex');
 set(0,'defaultAxesTickLabelInterpreter','latex');  
-
-
 
 
 
@@ -43,8 +38,9 @@ xlim([0 16])
 grid
 xticks([1 5 9 13]);
 xticklabels({'0012','5512','63-318','64-421'})
-ylabel('Drag [N]')
+ylabel('Lift [N]')
 hold off
+print('mean_lift_A0_Te_comparison', '-depsc');  
 
 %% Lift A=10
 figure()
@@ -57,19 +53,22 @@ for i = 1:numel(fn_mean_lift)
 
     if iseven == 1  % Even --> A=10
         if a10 == 0
-            plot(i,mean_lift.(fn_mean_lift{i}),'.',MarkerSize=20)
+            plot(i,mean_lift.(fn_mean_lift{i}),'xk',MarkerSize=10,LineWidth=1.5)
             a10 = 1;
         else
-            plot(i-2,mean_lift.(fn_mean_lift{i}),'x',MarkerSize=20)
+            plot(i-2,mean_lift.(fn_mean_lift{i}),'.k',MarkerSize=20)
             a10 = 0;
         end
     end
 end
-legend(fn_mean_lift(1:2:end),Location="eastoutside")
+legend('Blunt','Standard','interpreter','latex',Location='northwest')
 xlim([0 16])
+xticks([2 6 10 14]);
+xticklabels({'0012','5512','63-318','64-421'})
 grid
+ylabel('Lift [N]')
 hold off
-
+print('mean_lift_A10_Te_comparison', '-depsc');  
 
 
 %% Drag A=0
@@ -83,18 +82,23 @@ for i = 1:numel(fn_mean_drag)
 
     if iseven == 0   % Odd --> A=0
         if a0 == 0            
-            plot(i,mean_drag.(fn_mean_drag{i}),'.',MarkerSize=20)
+            plot(i,mean_drag.(fn_mean_drag{i}),'xk',MarkerSize=10,LineWidth=1.5)
             a0 = 1;
         else
-            plot(i-2,mean_drag.(fn_mean_drag{i}),'x',MarkerSize=20)
+            plot(i-2,mean_drag.(fn_mean_drag{i}),'.k',MarkerSize=20)
             a0 = 0;
         end
     end
 end
-legend(fn_mean_drag(1:2:end),Location="eastoutside")
+legend('Blunt','Standard','interpreter','latex',Location='northwest')
 xlim([0 16])
 grid
+xticks([1 5 9 13]);
+xticklabels({'0012','5512','63-318','64-421'})
+ylabel('Drag [N]')
+ylim([1 2])
 hold off
+print('mean_drag_A0_Te_comparison', '-depsc');  
 
 %% Drag A=10
 figure()
@@ -107,18 +111,23 @@ for i = 1:numel(fn_mean_drag)
 
     if iseven == 1  % Even --> A=10
         if a10 == 0
-            plot(i,mean_drag.(fn_mean_drag{i}),'.',MarkerSize=20)
+            plot(i,mean_drag.(fn_mean_drag{i}),'xk',MarkerSize=10,LineWidth=1.5)
             a10 = 1;
         else
-            plot(i-2,mean_drag.(fn_mean_drag{i}),'x',MarkerSize=20)
+            plot(i-2,mean_drag.(fn_mean_drag{i}),'.k',MarkerSize=20)
             a10 = 0;
         end
     end
 end
-legend(fn_mean_drag(1:2:end),Location="eastoutside")
+legend('Blunt','Standard','interpreter','latex',Location='northwest')
 xlim([0 16])
+xticks([2 6 10 14]);
+xticklabels({'0012','5512','63-318','64-421'})
 grid
+ylabel('Drag [N]')
 hold off
+
+print('mean_drag_A10_Te_comparison', '-depsc');  
 
 
 
