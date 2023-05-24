@@ -30,7 +30,7 @@ clc,clear,close all
 [main.UT_64421_b_a0_01.data,main.UT_64421_b_a0_01.fs] = audioread("Audio_recordings\Untripped\UT_64421_b_a0_01.wav");
 [main.UT_64421_s_a10_01.data,main.UT_64421_s_a10_01.fs] = audioread("Audio_recordings\Untripped\UT_64421_s_a10_01.wav");
 [main.UT_64421_b_a10_01.data,main.UT_64421_b_a10_01.fs] = audioread("Audio_recordings\Untripped\UT_64421_b_a10_01.wav");
-% 
+
 
 % Tripped flow
 [main.TF_0012_s_a0_01.data,main.TF_0012_s_a0_01.fs] = audioread("Audio_recordings\Tripped\TF_0012_s_a0.wav");
@@ -84,7 +84,6 @@ fn_audio_cor = fieldnames(corrected_audio);
 
 for i = 1:numel(fn_audio_cor)
     main.(fn_main{i}).data = corrected_audio.(fn_audio_cor{i}).data;
-
 
 end
 
