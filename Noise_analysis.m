@@ -30,7 +30,7 @@ clc,clear,close all
 [main.UT_64421_b_a0_01.data,main.UT_64421_b_a0_01.fs] = audioread("Audio_recordings\Untripped\UT_64421_b_a0_01.wav");
 [main.UT_64421_s_a10_01.data,main.UT_64421_s_a10_01.fs] = audioread("Audio_recordings\Untripped\UT_64421_s_a10_01.wav");
 [main.UT_64421_b_a10_01.data,main.UT_64421_b_a10_01.fs] = audioread("Audio_recordings\Untripped\UT_64421_b_a10_01.wav");
-
+% 
 
 % Tripped flow
 [main.TF_0012_s_a0_01.data,main.TF_0012_s_a0_01.fs] = audioread("Audio_recordings\Tripped\TF_0012_s_a0.wav");
@@ -61,15 +61,15 @@ clc,clear,close all
 
 option.save = 0;    % Not working 
 
-option.print = 1;
+option.print = 0;
 
 % Plot options
 option.recording = 0;
-option.fft = 0;
+option.fft = 1;
 option.loglog = 0;
 option.recording_tiled = 0;
 option.fft_tiled = 0;
-option.loglog_tiled = 1;
+option.loglog_tiled = 0;
 
 
 

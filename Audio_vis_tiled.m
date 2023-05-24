@@ -10,7 +10,6 @@ function Audio_vis_tiled(data,audio,option)
 
 
 
-
 % set(0,'defaultTextInterpreter','latex');
 
 

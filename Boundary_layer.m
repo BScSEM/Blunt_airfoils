@@ -34,7 +34,7 @@ set(0,'defaultTextInterpreter','latex');
 for i = 1:2:length(U_fn)
 
 figure()
-plot(Velocity.(U_fn{i}),h_a,'.--',LineWidth=2,MarkerSize=20)
+plot(Velocity.(U_fn{i}),h_a,'.--k',LineWidth=1,MarkerSize=20)
 title('Boundary layer flow velocity')
 xlabel('Velocity [m/s]')
 ylabel('Height [mm]')
@@ -43,7 +43,7 @@ grid
 
   
 figure()
-plot(Velocity.(U_fn{i+1}),h_b,'.--',LineWidth=2,MarkerSize=20)
+plot(Velocity.(U_fn{i+1}),h_b,'.--k',LineWidth=1,MarkerSize=20)
 title('Boundary layer flow velocity')
 xlabel('Velocity [m/s]')
 ylabel('Height [mm]')
