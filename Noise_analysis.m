@@ -15,7 +15,7 @@ option.print = 0;
 % Include types of tests
 option.untriped = 1;
 option.tripped = 0;
-option.background = 0;
+option.background = 1;
 
 % Plot options
 option.recording = 0;
