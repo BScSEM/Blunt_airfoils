@@ -49,6 +49,7 @@ YP = FT(1:floor(N/2));
 % Determine power
 P = abs(YP).^2;
 
+
 %% FFT plot
 if option.fft == 1
 figure()
