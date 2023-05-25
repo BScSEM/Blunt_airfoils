@@ -1,7 +1,8 @@
 function [corrected_audio] = correct_data(audio,T)
 % Sets all audio recordings the same time length, and removes stereo effects
-
-% T: New length of recordings
+% Input:
+%       audio: Recordings as .wav
+%       T: New length of recordings, scalar
 
 fn_audio = fieldnames(audio);
 

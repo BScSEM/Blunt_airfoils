@@ -1,4 +1,6 @@
 function [SPL] = Audio_SPL(audio,reference)
+% Determines the sound pressure level of recording based of reference
+% recording
 
 
 % Known value
