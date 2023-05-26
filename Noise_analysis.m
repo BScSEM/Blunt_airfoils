@@ -51,29 +51,29 @@ if option.untriped == 1
 [main.UT_0012_b_a0_01.data,main.UT_0012_b_a0_01.fs] = audioread("Audio_recordings\Untripped\UT_0012_b_a0_01.wav");
 [main.UT_0012_s_a10_01.data,main.UT_0012_s_a10_01.fs] = audioread("Audio_recordings\Untripped\UT_0012_s_a10_01.wav");
 [main.UT_0012_b_a10_01.data,main.UT_0012_b_a10_01.fs] = audioread("Audio_recordings\Untripped\UT_0012_b_a10_01.wav");
-[main.UT_0012_s_a15_01.data,main.UT_0012_s_a15_01.fs] = audioread("Audio_recordings\Untripped\UT_0012_s_a15.wav");
-[main.UT_0012_b_a15_01.data,main.UT_0012_b_a15_01.fs] = audioread("Audio_recordings\Untripped\UT_0012_b_a15.wav");
+[main.UT_0012_s_a15_01.data,main.UT_0012_s_a15_01.fs] = audioread("Audio_recordings\Untripped\UT_0012_s_a15_01.wav");
+[main.UT_0012_b_a15_01.data,main.UT_0012_b_a15_01.fs] = audioread("Audio_recordings\Untripped\UT_0012_b_a15_01.wav");
 
 [main.UT_5512_s_a0_01.data,main.UT_5512_s_a0_01.fs] = audioread("Audio_recordings\Untripped\UT_5512_s_a0_01.wav");
 [main.UT_5512_b_a0_01.data,main.UT_5512_b_a0_01.fs] = audioread("Audio_recordings\Untripped\UT_5512_b_a0_01.wav");
 [main.UT_5512_s_a10_01.data,main.UT_5512_s_a10_01.fs] = audioread("Audio_recordings\Untripped\UT_5512_s_a10_01.wav");
 [main.UT_5512_b_a10_01.data,main.UT_5512_b_a10_01.fs] = audioread("Audio_recordings\Untripped\UT_5512_b_a10_01.wav");
-[main.UT_5512_s_a15_01.data,main.UT_5512_s_a15_01.fs] = audioread("Audio_recordings\Untripped\UT_5512_s_a15.wav");
-[main.UT_5512_b_a15_01.data,main.UT_5512_b_a15_01.fs] = audioread("Audio_recordings\Untripped\UT_5512_b_a15.wav");
+[main.UT_5512_s_a15_01.data,main.UT_5512_s_a15_01.fs] = audioread("Audio_recordings\Untripped\UT_5512_s_a15_01.wav");
+[main.UT_5512_b_a15_01.data,main.UT_5512_b_a15_01.fs] = audioread("Audio_recordings\Untripped\UT_5512_b_a15_01.wav");
 
 [main.UT_63418_s_a0_01.data,main.UT_63418_s_a0_01.fs] = audioread("Audio_recordings\Untripped\UT_63418_s_a0_01.wav");
 [main.UT_63418_b_a0_01.data,main.UT_63418_b_a0_01.fs] = audioread("Audio_recordings\Untripped\UT_63418_b_a0_01.wav");
 [main.UT_63418_s_a10_01.data,main.UT_63418_s_a10_01.fs] = audioread("Audio_recordings\Untripped\UT_63418_s_a10_01.wav");
 [main.UT_63418_b_a10_01.data,main.UT_63418_b_a10_01.fs] = audioread("Audio_recordings\Untripped\UT_63418_b_a10_01.wav");
-% [main.UT_63418_s_a15_01.data,main.UT_63418_s_a15_01.fs] = audioread("Audio_recordings\Untripped\UT_63418_s_a15.wav");
-% [main.UT_63418_b_a15_01.data,main.UT_63418_b_a15_01.fs] = audioread("Audio_recordings\Untripped\UT_63418_b_a15.wav");
+[main.UT_63418_s_a15_01.data,main.UT_63418_s_a15_01.fs] = audioread("Audio_recordings\Untripped\UT_63418_s_a15_01.wav");
+[main.UT_63418_b_a15_01.data,main.UT_63418_b_a15_01.fs] = audioread("Audio_recordings\Untripped\UT_63418_b_a15_01.wav");
 
 [main.UT_64421_s_a0_01.data,main.UT_64421_s_a0_01.fs] = audioread("Audio_recordings\Untripped\UT_64421_s_a0_01.wav");
 [main.UT_64421_b_a0_01.data,main.UT_64421_b_a0_01.fs] = audioread("Audio_recordings\Untripped\UT_64421_b_a0_01.wav");
 [main.UT_64421_s_a10_01.data,main.UT_64421_s_a10_01.fs] = audioread("Audio_recordings\Untripped\UT_64421_s_a10_01.wav");
 [main.UT_64421_b_a10_01.data,main.UT_64421_b_a10_01.fs] = audioread("Audio_recordings\Untripped\UT_64421_b_a10_01.wav");
-% [main.UT_64421_s_a15_01.data,main.UT_64421_s_a15_01.fs] = audioread("Audio_recordings\Untripped\UT_64421_s_a15.wav");
-% [main.UT_64421_b_a15_01.data,main.UT_64421_b_a15_01.fs] = audioread("Audio_recordings\Untripped\UT_64421_b_a15.wav");
+[main.UT_64421_s_a15_01.data,main.UT_64421_s_a15_01.fs] = audioread("Audio_recordings\Untripped\UT_64421_s_a15_01.wav");
+[main.UT_64421_b_a15_01.data,main.UT_64421_b_a15_01.fs] = audioread("Audio_recordings\Untripped\UT_64421_b_a15_01.wav");
 
 end
 
