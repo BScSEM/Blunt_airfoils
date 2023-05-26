@@ -1,4 +1,4 @@
-% function SPL_plot(results,fn_main)
+function SPL_plot(results,fn_main)
 
 
 % figure()
