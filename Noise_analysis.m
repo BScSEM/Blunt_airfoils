@@ -22,14 +22,14 @@ option.tripped = 0;
 option.recording = 0;
 option.fft = 0;
 option.loglog = 0;
-option.recording_tiled = 1;
+option.recording_tiled = 0;
 option.fft_tiled = 0;
 option.loglog_tiled = 0;
 option.SPL = 0;
-option.graphmaker3000 = 0;
+option.graphmaker3000 = 1;
 
 
-option.filter = 0;
+option.filter = 1;
 
 
 %% Import data
@@ -137,42 +137,10 @@ end
 Audio_vis_tiled(results,main,option)
 
 
-
-%% Remove frequencies from fan
-
-% fs = 44100; % Hz
-% t = 0:1/fs:30; % 30 sec
-% t = t';
-% t = t(1:end-1);
-% N = fs * 30; % Samples
-% 
-% f1 = 30;    % Lower cutoff frequency (in Hz)
-% f2 = 70;    % Upper cutoff frequency (in Hz)
-% f3 = 260;   % Lower cutoff frequency (in Hz)
-% f4 = 310;   % Upper cutoff frequency (in Hz)
-% f5 = 560;   % Lower cutoff frequency (in Hz)
-% f6 = 610;   % Upper cutoff frequency (in Hz)
-% 
-% y = bandstop(corrected_audio.UT_0012_b_a10_01.data,[f1 f2],fs);
-% y = bandstop(y,[f3 f4],fs);
-% y = bandstop(y,[f5 f6],fs);
-% 
-% 
-% FT = fft(y)'/N;
-% 
-% % Remove mean value
-% FT(1) = [];
-% 
-% % Extract dectable frequencies
-% YP = FT(1:floor(N/2));
-% 
-% % Determine power
-% P = abs(YP).^2;
-
 %% Audio recording vs Filtered recording
 
 if option.filter == 1
-N = fs * 30;    % Samples
+N = fs * 10;    % Samples
 f1 = 30;        % Lower cutoff frequency (in Hz)
 f2 = 70;        % Upper cutoff frequency (in Hz)
 f3 = 260;       % Lower cutoff frequency (in Hz)
@@ -251,19 +219,118 @@ end
 %% GraphMaker3000
 
 if option.graphmaker3000 == 1
-    figure()
-    graphmaker3000 = tiledlayout(3,2);
-    title(graphmaker3000,'NACA 0012')
+set(0,'defaultTextInterpreter','latex');
 
-    for i = 2:2:6
-        nexttile
-        hold on
-        plot(results.Background_1.tspan,corrected_audio.(fn_main{i}).data)
-        plot(results.Background_1.tspan,corrected_audio.(fn_main {i}).filter)
-        hold off
-      
-    end
+    % Audio plots
+figure()
+graphmaker3000.N0012 = tiledlayout(3,2);
+title(graphmaker3000.N0012,'NACA 0012')
+for i = 5:10
+    nexttile
+    hold on
+    plot(results.Background_off.tspan,corrected_audio.(fn_main{i}).data)
+    plot(results.Background_off.tspan,corrected_audio.(fn_main {i}).filter)
+    xlabel('$Time \ [s]$')
+    legend({'Audio recording','Filtered audio recording'})
+    title('$Standard \ \alpha0$')
+    hold off
+end
 
+figure()
+graphmaker3000.N5512 = tiledlayout(3,2);
+title(graphmaker3000.N5512,'NACA 5512')
+for i = 11:16
+    nexttile
+    hold on
+    plot(results.Background_off.tspan,corrected_audio.(fn_main{i}).data)
+    plot(results.Background_off.tspan,corrected_audio.(fn_main {i}).filter)
+    xlabel('$Time \ [s]$')
+    legend({'Audio recording','Filtered audio recording'})
+   
+    hold off
+end
+
+figure()
+graphmaker3000.N63418 = tiledlayout(3,2);
+title(graphmaker3000.N63418,'NACA 63-418')
+for i = 17:22
+    nexttile
+    hold on
+    plot(results.Background_off.tspan,corrected_audio.(fn_main{i}).data)
+    plot(results.Background_off.tspan,corrected_audio.(fn_main {i}).filter)
+    xlabel('$Time \ [s]$')
+    legend({'Audio recording','Filtered audio recording'})
+    
+    hold off
+end
+
+figure()
+graphmaker3000.N64421 = tiledlayout(3,2);
+title(graphmaker3000.N64421,'NACA 64-421')
+for i = 23:28
+    nexttile
+    hold on
+    plot(results.Background_off.tspan,corrected_audio.(fn_main{i}).data)
+    plot(results.Background_off.tspan,corrected_audio.(fn_main {i}).filter)
+    xlabel('$Time \ [s]$')
+    legend({'Audio recording','Filtered audio recording'})
+    
+    hold off
+end
+
+    % Power plots
+
+figure()
+graphmaker3000.N0012 = tiledlayout(3,2);
+title(graphmaker3000.N0012,'NACA 0012')
+for i = 5:10
+    nexttile
+    hold on
+    plot(results.Background_off.fspan,results.(fn_main{i}).P)
+    plot(results.Background_off.fspan,results.(fn_main{i}).filtered_P)
+    xlabel('Frequency [Hz]')
+    legend({'Power spectrum','Filtered power spectrum'})
+    hold off
+end
+
+figure()
+graphmaker3000.N5512 = tiledlayout(3,2);
+title(graphmaker3000.N5512,'NACA 5512')
+for i = 11:16
+    nexttile
+    hold on
+    plot(results.Background_off.fspan,results.(fn_main{i}).P)
+    plot(results.Background_off.fspan,results.(fn_main{i}).filtered_P)
+    xlabel('Frequency [Hz]')
+    legend({'Power spectrum','Filtered power spectrum'})
+    hold off
+end
+
+figure()
+graphmaker3000.N63418 = tiledlayout(3,2);
+title(graphmaker3000.N63418,'NACA 63-418')
+for i = 17:22
+    nexttile
+    hold on
+    plot(results.Background_off.fspan,results.(fn_main{i}).P)
+    plot(results.Background_off.fspan,results.(fn_main{i}).filtered_P)
+    xlabel('Frequency [Hz]')
+    legend({'Power spectrum','Filtered power spectrum'})
+    hold off
+end
+
+figure()
+graphmaker3000.N64421 = tiledlayout(3,2);
+title(graphmaker3000.N64421,'NACA 64-421')
+for i = 23:28
+    nexttile
+    hold on
+    plot(results.Background_off.fspan,results.(fn_main{i}).P)
+    plot(results.Background_off.fspan,results.(fn_main{i}).filtered_P)
+    xlabel('Frequency [Hz]')
+    legend({'Power spectrum','Filtered power spectrum'})
+    hold off
+end
 
 end
 
