@@ -13,18 +13,23 @@ option.save = 0;    % Not working
 option.print = 0;
 
 % Include types of tests
+option.background = 1;
 option.untriped = 1;
 option.tripped = 0;
-option.background = 1;
+
 
 % Plot options
 option.recording = 0;
 option.fft = 0;
 option.loglog = 0;
-option.recording_tiled = 0;
+option.recording_tiled = 1;
 option.fft_tiled = 0;
 option.loglog_tiled = 0;
-option.SPL = 1;
+option.SPL = 0;
+option.graphmaker3000 = 0;
+
+
+option.filter = 0;
 
 
 %% Import data
@@ -46,29 +51,29 @@ if option.untriped == 1
 [main.UT_0012_b_a0_01.data,main.UT_0012_b_a0_01.fs] = audioread("Audio_recordings\Untripped\UT_0012_b_a0_01.wav");
 [main.UT_0012_s_a10_01.data,main.UT_0012_s_a10_01.fs] = audioread("Audio_recordings\Untripped\UT_0012_s_a10_01.wav");
 [main.UT_0012_b_a10_01.data,main.UT_0012_b_a10_01.fs] = audioread("Audio_recordings\Untripped\UT_0012_b_a10_01.wav");
-[main.UT_0012_s_a15_01.data,main.UT_0012_s_a15_01.fs] = audioread("Audio_recordings\Untripped\UT_0012_s_a15_01.wav");
-[main.UT_0012_b_a15_01.data,main.UT_0012_b_a15_01.fs] = audioread("Audio_recordings\Untripped\UT_0012_b_a15_01.wav");
+[main.UT_0012_s_a15_01.data,main.UT_0012_s_a15_01.fs] = audioread("Audio_recordings\Untripped\UT_0012_s_a15.wav");
+[main.UT_0012_b_a15_01.data,main.UT_0012_b_a15_01.fs] = audioread("Audio_recordings\Untripped\UT_0012_b_a15.wav");
 
 [main.UT_5512_s_a0_01.data,main.UT_5512_s_a0_01.fs] = audioread("Audio_recordings\Untripped\UT_5512_s_a0_01.wav");
 [main.UT_5512_b_a0_01.data,main.UT_5512_b_a0_01.fs] = audioread("Audio_recordings\Untripped\UT_5512_b_a0_01.wav");
 [main.UT_5512_s_a10_01.data,main.UT_5512_s_a10_01.fs] = audioread("Audio_recordings\Untripped\UT_5512_s_a10_01.wav");
 [main.UT_5512_b_a10_01.data,main.UT_5512_b_a10_01.fs] = audioread("Audio_recordings\Untripped\UT_5512_b_a10_01.wav");
-[main.UT_5512_s_a15_01.data,main.UT_5512_s_a15_01.fs] = audioread("Audio_recordings\Untripped\UT_5512_s_a15_01.wav");
-[main.UT_5512_b_a15_01.data,main.UT_5512_b_a15_01.fs] = audioread("Audio_recordings\Untripped\UT_5512_b_a15_01.wav");
+[main.UT_5512_s_a15_01.data,main.UT_5512_s_a15_01.fs] = audioread("Audio_recordings\Untripped\UT_5512_s_a15.wav");
+[main.UT_5512_b_a15_01.data,main.UT_5512_b_a15_01.fs] = audioread("Audio_recordings\Untripped\UT_5512_b_a15.wav");
 
 [main.UT_63418_s_a0_01.data,main.UT_63418_s_a0_01.fs] = audioread("Audio_recordings\Untripped\UT_63418_s_a0_01.wav");
 [main.UT_63418_b_a0_01.data,main.UT_63418_b_a0_01.fs] = audioread("Audio_recordings\Untripped\UT_63418_b_a0_01.wav");
 [main.UT_63418_s_a10_01.data,main.UT_63418_s_a10_01.fs] = audioread("Audio_recordings\Untripped\UT_63418_s_a10_01.wav");
 [main.UT_63418_b_a10_01.data,main.UT_63418_b_a10_01.fs] = audioread("Audio_recordings\Untripped\UT_63418_b_a10_01.wav");
-[main.UT_63418_s_a15_01.data,main.UT_63418_s_a15_01.fs] = audioread("Audio_recordings\Untripped\UT_63418_s_a15_01.wav");
-[main.UT_63418_b_a15_01.data,main.UT_63418_b_a15_01.fs] = audioread("Audio_recordings\Untripped\UT_63418_b_a15_01.wav");
+% [main.UT_63418_s_a15_01.data,main.UT_63418_s_a15_01.fs] = audioread("Audio_recordings\Untripped\UT_63418_s_a15.wav");
+% [main.UT_63418_b_a15_01.data,main.UT_63418_b_a15_01.fs] = audioread("Audio_recordings\Untripped\UT_63418_b_a15.wav");
 
 [main.UT_64421_s_a0_01.data,main.UT_64421_s_a0_01.fs] = audioread("Audio_recordings\Untripped\UT_64421_s_a0_01.wav");
 [main.UT_64421_b_a0_01.data,main.UT_64421_b_a0_01.fs] = audioread("Audio_recordings\Untripped\UT_64421_b_a0_01.wav");
 [main.UT_64421_s_a10_01.data,main.UT_64421_s_a10_01.fs] = audioread("Audio_recordings\Untripped\UT_64421_s_a10_01.wav");
 [main.UT_64421_b_a10_01.data,main.UT_64421_b_a10_01.fs] = audioread("Audio_recordings\Untripped\UT_64421_b_a10_01.wav");
-[main.UT_64421_s_a15_01.data,main.UT_64421_s_a15_01.fs] = audioread("Audio_recordings\Untripped\UT_64421_s_a15_01.wav");
-[main.UT_64421_b_a15_01.data,main.UT_64421_b_a15_01.fs] = audioread("Audio_recordings\Untripped\UT_64421_b_a15_01.wav");
+% [main.UT_64421_s_a15_01.data,main.UT_64421_s_a15_01.fs] = audioread("Audio_recordings\Untripped\UT_64421_s_a15.wav");
+% [main.UT_64421_b_a15_01.data,main.UT_64421_b_a15_01.fs] = audioread("Audio_recordings\Untripped\UT_64421_b_a15.wav");
 
 end
 
@@ -103,25 +108,6 @@ if option.tripped == 1
 
 [main.TF_64421_s_a15_01.data,main.TF_64421_s_a15_01.fs] = audioread("Audio_recordings\Tripped\TF_64421_s_a15.wav");
 [main.TF_64421_b_a15_01.data,main.TF_64421_b_a15_01.fs] = audioread("Audio_recordings\Tripped\TF_64421_b_a15.wav");
-
-
-%% Options
-% Set to 1 to activate
-
-option.save = 0;    % Not working 
-
-option.print = 1;
-
-% Plot options
-option.recording = 0;
-option.fft = 0;
-option.loglog = 0;
-option.recording_tiled = 1;
-option.fft_tiled = 1;
-option.loglog_tiled = 1;
-option.graphmaker3000 = 1;
-
-
 end
 
 
@@ -185,6 +171,7 @@ Audio_vis_tiled(results,main,option)
 
 %% Audio recording vs Filtered recording
 
+if option.filter == 1
 N = fs * 30;    % Samples
 f1 = 30;        % Lower cutoff frequency (in Hz)
 f2 = 70;        % Upper cutoff frequency (in Hz)
@@ -244,6 +231,7 @@ if option.fft_tiled == 1
     end
 end
 
+end
 
 %% loglog vs Filtered loglog
 
