@@ -273,9 +273,8 @@ if option.graphmaker3000 == 1
         plot(results.Background_1.tspan,corrected_audio.(fn_main{i}).data)
         plot(results.Background_1.tspan,corrected_audio.(fn_main {i}).filter)
         hold off
-
       
-end
+    end
 
 
 end
