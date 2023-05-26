@@ -10,7 +10,6 @@ function [results] = Audio_vis(data,fs,Name,option)
 %       results: Frequency power from FFT, aswell as the time- and frequency-span 
 
 
-
 % set(0,'defaultTextInterpreter','latex');
 
 
@@ -49,6 +48,7 @@ YP = FT(1:floor(N/2));
 
 % Determine power
 P = abs(YP).^2;
+
 
 %% FFT plot
 if option.fft == 1

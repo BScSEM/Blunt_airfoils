@@ -10,7 +10,7 @@ fan_speed = flip(((0:0.25:3)/3)*100);
 % Plot
 figure()
 set(0,'defaultTextInterpreter','latex');
-plot(U,fan_speed,'.-',LineWidth=2,MarkerSize=20)
+plot(U,fan_speed,'.--k',LineWidth=1,MarkerSize=20)
 title('Reference velocity')
 xlabel('Velocity [m/s]')
 ylabel('Fan speed \%')
