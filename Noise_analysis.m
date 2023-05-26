@@ -67,12 +67,11 @@ if option.untriped == 1
 [main.UT_64421_b_a0_01.data,main.UT_64421_b_a0_01.fs] = audioread("Audio_recordings\Untripped\UT_64421_b_a0_01.wav");
 [main.UT_64421_s_a10_01.data,main.UT_64421_s_a10_01.fs] = audioread("Audio_recordings\Untripped\UT_64421_s_a10_01.wav");
 [main.UT_64421_b_a10_01.data,main.UT_64421_b_a10_01.fs] = audioread("Audio_recordings\Untripped\UT_64421_b_a10_01.wav");
-<<<<<<< HEAD
 [main.UT_64421_s_a15_01.data,main.UT_64421_s_a15_01.fs] = audioread("Audio_recordings\Untripped\UT_64421_s_a15_01.wav");
 [main.UT_64421_b_a15_01.data,main.UT_64421_b_a15_01.fs] = audioread("Audio_recordings\Untripped\UT_64421_b_a15_01.wav");
-=======
+
 end
->>>>>>> 9790821c7224aaf74a44501eecd9dd6bb1b4f6c6
+
 
 % Tripped flow
 if option.tripped == 1
@@ -101,7 +100,7 @@ if option.tripped == 1
 [main.TF_64421_b_a0_01.data,main.TF_64421_b_a0_01.fs] = audioread("Audio_recordings\Tripped\TF_64421_b_a0.wav");
 [main.TF_64421_s_a10_01.data,main.TF_64421_s_a10_01.fs] = audioread("Audio_recordings\Tripped\TF_64421_s_a10.wav");
 [main.TF_64421_b_a10_01.data,main.TF_64421_b_a10_01.fs] = audioread("Audio_recordings\Tripped\TF_64421_b_a10.wav");
-<<<<<<< HEAD
+
 [main.TF_64421_s_a15_01.data,main.TF_64421_s_a15_01.fs] = audioread("Audio_recordings\Tripped\TF_64421_s_a15.wav");
 [main.TF_64421_b_a15_01.data,main.TF_64421_b_a15_01.fs] = audioread("Audio_recordings\Tripped\TF_64421_b_a15.wav");
 
@@ -122,13 +121,9 @@ option.fft_tiled = 1;
 option.loglog_tiled = 1;
 option.graphmaker3000 = 1;
 
-=======
+
 end
 
-
-
-
->>>>>>> 9790821c7224aaf74a44501eecd9dd6bb1b4f6c6
 
 %% Set data scale
 
@@ -156,7 +151,7 @@ end
 Audio_vis_tiled(results,main,option)
 
 
-<<<<<<< HEAD
+
 %% Remove frequencies from fan
 
 % fs = 44100; % Hz
@@ -283,9 +278,8 @@ if option.graphmaker3000 == 1
 end
 
 
+end
 
-
-=======
 %% SPL
 % Determine soundpressure level of recordings
 
@@ -298,4 +292,3 @@ end
 if option.SPL == 1
     SPL_plot(results,fn_main)
 end
->>>>>>> 9790821c7224aaf74a44501eecd9dd6bb1b4f6c6
