@@ -15,17 +15,17 @@ option.print = 0;
 % Include types of tests
 option.background = 1;
 option.untriped = 1;
-option.tripped = 0;
+option.tripped = 1;
 
 
 % Plot options
 option.recording = 0;
 option.fft = 0;
 option.loglog = 0;
-option.recording_tiled = 1;
+option.recording_tiled = 0;
 option.fft_tiled = 0;
 option.loglog_tiled = 0;
-option.SPL = 0;
+option.SPL = 1;
 option.graphmaker3000 = 0;
 
 
@@ -278,5 +278,5 @@ end
 
 % Plot SPL
 if option.SPL == 1
-    SPL_plot(results,fn_main)
+    SPL_plot(results,fn_main,option)
 end
