@@ -266,6 +266,13 @@ for i = 1:length(fn_main)
     end
 end
 
+%% Norm for filtered_P
+for i = 1:length(fn_main)
+    for k = 1:length(results.(fn_main{i}).filtered_P)
+        results.(fn_main{i}).normalized_filter_P(k) = (results.(fn_main{i}).filtered_P(k) - min_d)/range;
+    end
+end
+
 %% Norm for filter_ZOOM
 for i = 1:length(fn_main)
     for k = 1:length(results.(fn_main{i}).filter_ZOOM)
