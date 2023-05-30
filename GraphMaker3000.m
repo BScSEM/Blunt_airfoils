@@ -95,7 +95,7 @@ for i = 5:10
     %xline(h_blade,'--g')
     hold off
 end
-print('power_0012','-depsc')
+print('norm_power_0012','-depsc')
 
 figure()
 graphmaker3000.N5512 = tiledlayout(3,2);
@@ -113,7 +113,7 @@ for i = 11:16
     %xline(h_blade,'--g')
     hold off
 end
-print('power_5512','-depsc')
+print('norm_power_5512','-depsc')
 
 figure()
 graphmaker3000.N63418 = tiledlayout(3,2);
@@ -131,7 +131,7 @@ for i = 17:22
     title(graph(i-16))
     hold off
 end
-print('power_63418','-depsc')
+print('norm_power_63418','-depsc')
 
 figure()
 graphmaker3000.N64421 = tiledlayout(3,2);
@@ -149,7 +149,7 @@ for i = 23:28
     title(graph(i-22))
     hold off
 end
-print('power_64421','-depsc')
+print('norm_power_64421','-depsc')
 
 %% Normalized Power plots ZOOM (xlim [35 55])
   

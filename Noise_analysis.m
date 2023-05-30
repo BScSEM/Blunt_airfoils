@@ -27,8 +27,8 @@ option.fft_tiled = 0;
 option.loglog_tiled = 0;
 option.SPL = 0;
 option.gm3k = 1;
-option.SPL = 1;
-option.graphmaker3000 = 0;
+option.SPL = 0;
+
 
 
 option.filter = 1;
@@ -285,7 +285,6 @@ end
 for i = 1:numel(fn_main)    
     results.(fn_main{i}).SPL = Audio_SPL(main.(fn_main{i}).data,reference);
 end
-
 
 % Plot SPL
 if option.SPL == 1
