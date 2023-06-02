@@ -37,9 +37,9 @@ xlabel('time [s]')
 title('Audio recording',Name)
 ylabel('Amplitude')
 xlim([0 T])
-% if save_option == 1 
-% print(Audio_vis_output\Name, '-depsc');  
-% end
+if option.save == 1
+print(append('Audio_',num2str(i)), '-depsc');  
+end
 end
 
 %% Fourier transform
@@ -87,8 +87,12 @@ figure()
 loglog(fspan,P)
 title(Name)
 xlabel('Frequency [Hz]')
+ylabel('Power')
 grid
-
+xlim([0 fs/2])
+if option.save == 1
+print(append('Power_spectrum_loglog_',num2str(i)), '-depsc');  
+end
 end
 
 

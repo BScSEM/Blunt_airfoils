@@ -8,7 +8,7 @@ clc,clear,close all
 %% Options
 % Set to 1 to activate
 
-option.save = 1;    % Only implemented some places
+option.save = 0;    % Only implemented some places
 
 option.print = 0;
 
@@ -20,8 +20,8 @@ option.tripped = 1;
 
 % Plot options
 option.recording = 0;
-option.fft = 1;
-option.loglog = 0;
+option.fft = 0;
+option.loglog = 1;
 option.recording_tiled = 0;
 option.fft_tiled = 0;
 option.loglog_tiled = 0;
