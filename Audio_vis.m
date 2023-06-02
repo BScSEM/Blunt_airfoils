@@ -1,4 +1,4 @@
-function [results] = Audio_vis(data,fs,Name,option)
+function [results] = Audio_vis(data,fs,test,option,i)
 % Performs Fast Fourier transform on input data, plots data with respect to
 % time, plots power sptectrum in log and non-log format
 % Input:
@@ -11,6 +11,11 @@ function [results] = Audio_vis(data,fs,Name,option)
 
 
 % set(0,'defaultTextInterpreter','latex');
+
+
+% Determine name
+Name = Name_det(option,i);
+
 
 
 % Variables of data
@@ -64,6 +69,9 @@ xlabel('Frequency [Hz]')
 ylabel('Power')
 grid
 xlim([0 0.15e4])
+if option.save == 1
+print(append('Power_spectrum_',num2str(i)), '-depsc');  
+end
 end
 
 % Extract dominant frequency

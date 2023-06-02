@@ -52,33 +52,46 @@ end
 
 % TE type
 iseven = rem(i,2);
-if iseven == 0  % uneven, STE
+if iseven == 1  % uneven, STE
     TE = 'STE ';
+
+    % AOA
+    isthirds = rem(i,3);
+    if isthirds == 2    % a0
+        AOA = '$\alpha = 0$ ';
+    elseif isthirds == 1    
+        AOA = '$\alpha = 10$ ';
+    else
+        AOA = '$\alpha = 15$ ';
+    end
+
+
 else % BTE
     TE = 'BTE ';
+
+    % AOA
+    isthirds = rem(i-1,3);
+    if isthirds == 2    % a0
+        AOA = '$\alpha = 0$ ';
+    elseif isthirds == 1    
+        AOA = '$\alpha = 10$ ';
+    else
+        AOA = '$\alpha = 15$ ';
+    end
+
+
 end
 
 
-% AOA
-isthirds = rem(i,3);
-if isthirds == 2    % a0
-    AOA = '$\alpha = 0$ ';
-elseif isthirds == 1    
-    AOA = '$\alpha = 10$ ';
-else
-    AOA = '$\alpha = 15$ ';
-end
+
 
 
 
 if i > 4
 
-Name = append(Airfoil,TE,AOA,flow);
-
-
+    Name = append(Airfoil,TE,AOA,flow);
 
 end
 
-% Name = 'NACA 0012 STE $\alpha = 0$'
 
 

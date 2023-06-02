@@ -8,7 +8,7 @@ clc,clear,close all
 %% Options
 % Set to 1 to activate
 
-option.save = 0;    % Not working 
+option.save = 1;    % Only implemented some places
 
 option.print = 0;
 
@@ -20,18 +20,18 @@ option.tripped = 1;
 
 % Plot options
 option.recording = 0;
-option.fft = 0;
+option.fft = 1;
 option.loglog = 0;
 option.recording_tiled = 0;
 option.fft_tiled = 0;
 option.loglog_tiled = 0;
 option.SPL = 0;
-option.gm3k = 1;
-option.SPL = 1;
+option.gm3k = 0;
+option.SPL = 0;
 option.graphmaker3000 = 0;
 
 
-option.filter = 1;
+option.filter = 0;
 
 
 %% Import data
@@ -131,12 +131,12 @@ fn_main = fieldnames(main);
 fs = main.(fn_main{1}).fs;
 
 for i = 1:length(fn_main)
-    results.(fn_main{i}) = Audio_vis(main.(fn_main{i}).data,main.(fn_main{i}).fs,fn_main(i),option);
+    results.(fn_main{i}) = Audio_vis(main.(fn_main{i}).data,main.(fn_main{i}).fs,fn_main(i),option,i);
     % plot recording, FFT and loglog FFT
 end
 
 % Plot results tiled
-Audio_vis_tiled(results,main,option)
+Audio_vis_tiled(results,main,option,i)
 
 
 %% Bandstop Filter
@@ -189,6 +189,7 @@ end
 
 %% FFT of Filtered data
 
+if option.filter == 1
 for i = 1:length(fn_main)
     FT = fft(corrected_audio.(fn_main{i}).filter)'/N;
     FT_ZOOM = fft(corrected_audio.(fn_main{i}).filter_ZOOM)'/N;
@@ -221,6 +222,7 @@ if option.fft_tiled == 1
 end
 
 end
+end
 
 %% loglog vs Filtered loglog
 
@@ -239,6 +241,7 @@ end
 
 %% Normalization scheme
 
+if option.filter == 1
  % Method
 % range = max(data)-min(data);
 % normalized(i) = (data(i) - min(data)/range);
@@ -265,14 +268,15 @@ for i = 1:length(fn_main)
         results.(fn_main{i}).normalized_P(k) = (results.(fn_main{i}).P(k) - min_d)/range;
     end
 end
-
+end
 %% Norm for filter_ZOOM
+if option.filter == 1
 for i = 1:length(fn_main)
     for k = 1:length(results.(fn_main{i}).filter_ZOOM)
         results.(fn_main{i}).normalized_filter_ZOOM(k) = (results.(fn_main{i}).filter_ZOOM(k) - min_d)/range;
     end
 end
-
+end
 
 %% GraphMaker3000
 if option.gm3k == 1

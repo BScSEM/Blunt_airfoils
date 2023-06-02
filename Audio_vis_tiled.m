@@ -1,4 +1,4 @@
-function Audio_vis_tiled(data,audio,option)
+function Audio_vis_tiled(data,audio,option,i)
 % Performs Fast Fourier transform on input data, plots data with respect to
 % time, plots power sptectrum in log and non-log format
 % Input:
@@ -10,7 +10,10 @@ function Audio_vis_tiled(data,audio,option)
 
 
 
-% set(0,'defaultTextInterpreter','latex');
+% Determine name
+Name = Name_det(option,i);
+
+set(0,'defaultTextInterpreter','latex');
 
 
 fn_data = fieldnames(data);
@@ -55,9 +58,11 @@ if option.fft_tiled == 1
         % titl = append("$",string(Name),"$")
         % title(titl)
         % subtitle('Power Spectrum')
-        title(fn_data{i})
-        % xlabel('Frequency [Hz]')
-        % ylabel('Power')
+        
+%         title(fn_data{i})
+        xlabel('Frequency [Hz]')
+        ylabel('Power')
+        title(Name)
         grid
         xlim([0 0.15e4])
         ylim([0 1e-3])
