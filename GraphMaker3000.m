@@ -134,7 +134,7 @@ for i = 17:22
     title(graph(i-16))
     hold off
 end
-print('norm_power_63418','-depsc')
+print('norm_filtered_power_63418','-depsc')
 
 figure()
 graphmaker3000.N64421 = tiledlayout(3,2);
