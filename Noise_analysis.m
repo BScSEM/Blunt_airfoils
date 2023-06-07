@@ -14,14 +14,14 @@ option.print = 0;
 
 % Include types of tests
 option.background = 1;
-option.untriped = 1;
-option.tripped = 1;
+option.untriped = 0;
+option.tripped = 0;
 
 
 % Plot options
-option.recording = 0;
-option.fft = 0;
-option.loglog = 1;
+option.recording = 1;
+option.fft = 1;
+option.loglog = 0;
 option.recording_tiled = 0;
 option.fft_tiled = 0;
 option.loglog_tiled = 0;

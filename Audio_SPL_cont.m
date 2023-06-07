@@ -1,5 +1,5 @@
 function [SPL] = Audio_SPL_cont(audio,reference)
-
+% Convertes signal to SPL dB
 
 % Known value
 Reference_scaling_value = 87; % [SPL dB]

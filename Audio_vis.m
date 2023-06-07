@@ -56,10 +56,15 @@ P = abs(YP).^2;
 % Convert to SPL
 [P] = Audio_SPL_cont(P,reference);
 
+
+if i  == 1
+    P = abs(P);
+end
 %% FFT plot
 if option.fft == 1
 figure()
-stem(fspan,P,'.','MarkerFaceColor','blue','MarkerSize',15,LineWidth=1.5)
+plot(fspan,P,'MarkerFaceColor','blue','MarkerSize',15,LineWidth=1.5)
+% set(gca,'xscal','log')
 % title('Power Spectrum',Name)
 % tex_s = ("$")
 % titl = append("$",string(Name),"$")
@@ -67,9 +72,10 @@ stem(fspan,P,'.','MarkerFaceColor','blue','MarkerSize',15,LineWidth=1.5)
 % subtitle('Power Spectrum')
 title(Name)
 xlabel('Frequency [Hz]')
-ylabel('Power')
+ylabel('SPL dB')
 grid
 xlim([0 0.15e4])
+ylim([0 100])
 if option.save == 1
 print(append('Power_spectrum_',num2str(i)), '-depsc');  
 end
@@ -89,7 +95,7 @@ figure()
 semilogx(fspan,P)
 title(Name)
 xlabel('Frequency [Hz]')
-ylabel('Power')
+ylabel('SPL dB')
 grid
 xlim([0 fs/2])
 if option.save == 1
