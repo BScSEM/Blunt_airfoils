@@ -68,7 +68,7 @@ grid
 hold off
 print('SPL_5512', '-depsc');  
 
-%% 63-318
+%% 63-418
 
 figure()
 hold on
@@ -85,7 +85,7 @@ j = i-12;
     end
 
 end
-title('SPL NACA 63-318')
+title('SPL NACA 63-418')
 xlim([0 6])
 ylim([110 115])
 ylabel('dB',Rotation=360)
