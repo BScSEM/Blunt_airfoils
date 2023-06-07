@@ -16,7 +16,7 @@ option.print = 0;
 option.background = 1;
 option.untriped = 1;
 option.tripped = 0;
-
+option.vsf = 1;
 
 % Plot options
 option.recording = 0;
@@ -32,7 +32,7 @@ option.gm3k = 1;
 option.filter = 1;
 
 
-%% Import data
+%% Import data audio data
 
 % Reference
 [reference] = audioread('Audio_recordings\Reference_sound.wav');
@@ -109,6 +109,56 @@ if option.tripped == 1
 [main.TF_64421_s_a15_01.data,main.TF_64421_s_a15_01.fs] = audioread("Audio_recordings\Tripped\TF_64421_s_a15.wav");
 [main.TF_64421_b_a15_01.data,main.TF_64421_b_a15_01.fs] = audioread("Audio_recordings\Tripped\TF_64421_b_a15.wav");
 end
+
+%% Import force data for vortex shedding frequency (vsf)
+
+if option.vsf ==1
+
+dat = importdata('Force_data\force_data_0012b.xlsx');
+force.mod0012b.a0 = dat.data.PlotData(:,2);
+
+dat = importdata('Force_data\force_data_0012s_a10.xlsx');
+force.F0012s.a10 = dat.data.PlotData(:,2); 
+
+dat = importdata('Force_data\force_data_0012s_a20.xlsx');
+force.F0012s.a20 = dat.data.PlotData(:,2);
+
+dat = importdata('Force_data\force_data_5512b.xlsx');
+force.F5512b.a0 = dat.data.PlotData(:,2);
+
+dat = importdata('Force_data\force_data_5512s.xlsx');
+force.F5512s.a0 = dat.data.PlotData(:,2);
+
+dat = importdata('Force_data\force_data_5512s_a10.xlsx');
+force.F5512s.a10 = dat.data.PlotData(:,2);
+
+dat = importdata('Force_data\force_data_63-418b.xlsx');
+force.F63418b.a0 = dat.data.PlotData(:,2);
+
+dat = importdata('Force_data\force_data_63-418b_a10.xlsx');
+force.F63418b.a10 = dat.data.PlotData(:,2);
+
+dat = importdata('Force_data\force_data_63-418s.xlsx');
+force.F63418s.a0 = dat.data.PlotData(:,2);
+
+dat = importdata('Force_data\force_data_63-418s_a10.xlsx');
+force.F63418s.a10 = dat.data.PlotData(:,2);
+
+dat = importdata('Force_data\force_data_64-421b.xlsx');
+force.F64421b.a0 = dat.data.PlotData(:,2);
+
+dat = importdata('Force_data\force_data_64-421b_a10.xlsx');
+force.F64421b.a10 = dat.data.PlotData(:,2);
+
+dat = importdata('Force_data\force_data_64-421s.xlsx');
+force.F64421s.a0 = dat.data.PlotData(:,2);
+
+dat = importdata('Force_data\force_data_64-421s_a10.xlsx');
+force.F64421s.a10 = dat.data.PlotData(:,2);
+ 
+end
+
+
 
 
 %% Set data scale
