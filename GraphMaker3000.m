@@ -6,64 +6,130 @@ set(0,'defaultTextInterpreter','latex');
 
 graph = ["STE \ $\alpha = 0$", "BTE \ $\alpha = 0$", "STE \ $\alpha = 10$", "BTE \ $\alpha = 10$", "STE \ $\alpha = 15$", "BTE \ $\alpha = 15$"];
 
-%% Audio plots
+%% Audio comparison with filter plots
 figure()
 graphmaker3000.N0012 = tiledlayout(3,2);
-title(graphmaker3000.N0012,'NACA 0012 - Audio','Interpreter','latex')
+title(graphmaker3000.N0012,'NACA 0012 - Audio (Filter)','Interpreter','latex')
 for i = 5:10
     nexttile
     hold on
     plot(results.Background_off.tspan,corrected_audio.(fn_main{i}).data)
     plot(results.Background_off.tspan,corrected_audio.(fn_main {i}).filter)
-    xlabel('$Time \ [s]$')
+    xlabel('$\mbox{Time \ [s]}$')
     title(graph(i-4))
+    grid minor
     hold off
 end
 print('audio_0012','-depsc')
 
 figure()
 graphmaker3000.N5512 = tiledlayout(3,2);
-title(graphmaker3000.N5512,'NACA 5512 - Audio','Interpreter','latex')
+title(graphmaker3000.N5512,'NACA 5512 - Audio (Filter)','Interpreter','latex')
 for i = 11:16
     nexttile
     hold on
     plot(results.Background_off.tspan,corrected_audio.(fn_main{i}).data)
     plot(results.Background_off.tspan,corrected_audio.(fn_main {i}).filter)
-    xlabel('$Time \ [s]$')
+    xlabel('$\mbox{Time \ [s]}$')
     title(graph(i-10))
+    grid minor
     hold off
 end
 print('audio_5512','-depsc')
 
 figure()
 graphmaker3000.N63418 = tiledlayout(3,2);
-title(graphmaker3000.N63418,'NACA 63-418 - Audio','Interpreter','latex')
+title(graphmaker3000.N63418,'NACA 63-418 - Audio (Filter)','Interpreter','latex')
 for i = 17:22
     nexttile
     hold on
     plot(results.Background_off.tspan,corrected_audio.(fn_main{i}).data)
     plot(results.Background_off.tspan,corrected_audio.(fn_main {i}).filter)
-    xlabel('$Time \ [s]$')
+    xlabel('$\mbox{Time \ [s]}$')
     title(graph(i-16))
+    grid minor
     hold off
 end
 print('audio_63418','-depsc')
 
 figure()
 graphmaker3000.N64421 = tiledlayout(3,2);
-title(graphmaker3000.N64421,'NACA 64-421 - Audio','Interpreter','latex')
+title(graphmaker3000.N64421,'NACA 64-421 - Audio (Filter)','Interpreter','latex')
 for i = 23:28
     nexttile
     hold on
     plot(results.Background_off.tspan,corrected_audio.(fn_main{i}).data)
     plot(results.Background_off.tspan,corrected_audio.(fn_main {i}).filter)
-    xlabel('$Time \ [s]$')
+    xlabel('$\mbox{Time \ [s]}$')
     title(graph(i-22))
+    grid minor
     hold off
 end
 print('audio_64421','-depsc')
 
-%% Power plots overview xlim([0 800] 
+%% Audio comparison with empty wind tunnel plots
+figure()
+graphmaker3000.N0012 = tiledlayout(3,2);
+title(graphmaker3000.N0012,'NACA 0012 - Audio (Empty wind tunnel)','Interpreter','latex')
+for i = 5:10
+    nexttile
+    hold on
+    plot(results.Background_off.tspan,corrected_audio.(fn_main{i}).data)
+    plot(results.Background_off.tspan,corrected_audio.(fn_main {2}).data)
+    xlabel('$\mbox{Time \ [s]}$')
+    title(graph(i-4))
+    grid minor
+    hold off
+end
+print('audio_empty_0012','-depsc')
+
+figure()
+graphmaker3000.N5512 = tiledlayout(3,2);
+title(graphmaker3000.N5512,'NACA 5512 - Audio (Empty wind tunnel)','Interpreter','latex')
+for i = 11:16
+    nexttile
+    hold on
+    plot(results.Background_off.tspan,corrected_audio.(fn_main{i}).data)
+    plot(results.Background_off.tspan,corrected_audio.(fn_main {2}).data)
+    xlabel('$\mbox{Time \ [s]}$')
+    title(graph(i-10))
+    grid minor
+    hold off
+end
+print('audio_empty_5512','-depsc')
+
+figure()
+graphmaker3000.N63418 = tiledlayout(3,2);
+title(graphmaker3000.N63418,'NACA 63-418 - Audio (Empty wind tunnel)','Interpreter','latex')
+for i = 17:22
+    nexttile
+    hold on
+    plot(results.Background_off.tspan,corrected_audio.(fn_main{i}).data)
+    plot(results.Background_off.tspan,corrected_audio.(fn_main {2}).data)
+    xlabel('$\mbox{Time \ [s]}$')
+    title(graph(i-16))
+    grid minor
+    hold off
+end
+print('audio_empty_63418','-depsc')
+
+figure()
+graphmaker3000.N64421 = tiledlayout(3,2);
+title(graphmaker3000.N64421,'NACA 64-421 - Audio (Empty wind tunnel)','Interpreter','latex')
+for i = 23:28
+    nexttile
+    hold on
+    plot(results.Background_off.tspan,corrected_audio.(fn_main{i}).data)
+    plot(results.Background_off.tspan,corrected_audio.(fn_main {2}).data)
+    xlabel('$\mbox{Time \ [s]}$')
+    title(graph(i-22))
+    grid minor
+    hold off
+end
+print('audio_empty_64421','-depsc')
+
+
+%% Filtered Power plots overview xlim([0 800] 
    
 % Harmonics
 f_fan = 48.33;    
@@ -76,26 +142,103 @@ end
 for i = 1:4
     h_blade(i) = f_blade*i;
 end
-
 xlimit = [0 700];
 
 figure()
 graphmaker3000.N0012 = tiledlayout(3,2);
 title(graphmaker3000.N0012,'NACA 0012 - Power Spectrum','Interpreter','latex')
+ylimit = {[0 5E-3], [0 5E-3], [0 5E-3], [0 5E-3], [0 8E-3],[0 8E-3]};
+for i = 5:10
+    nexttile
+    hold on
+    plot(results.Background_off.fspan,results.(fn_main{i}).normalized_filter_P)
+    xlabel('Frequency [Hz]')
+    xlim(xlimit)
+    ylim(ylimit{i-4})
+    title(graph(i-4))
+    xline(h_fan,'--r')
+    xline(h_blade,'--g')
+    hold off
+end
+print('norm_filtered_power_0012','-depsc')
+
+figure()
+graphmaker3000.N5512 = tiledlayout(3,2);
+title(graphmaker3000.N5512,'NACA 5512 - Power Spectrum','Interpreter','latex')
+ylimit = {[0 6E-3], [0 6E-3],[0 8E-3], [0 8E-3], [0 6E-3], [0 6E-3]};
+for i = 11:16
+    nexttile
+    hold on
+    plot(results.Background_off.fspan,results.(fn_main{i}).normalized_filter_P)
+    xlabel('Frequency [Hz]')
+    xlim(xlimit)
+    ylim(ylimit{i-10})
+    title(graph(i-10))
+    xline(h_fan,'--r')
+    xline(h_blade,'--g')
+    hold off
+end
+print('norm__filtered_power_5512','-depsc')
+
+figure()
+graphmaker3000.N63418 = tiledlayout(3,2);
+title(graphmaker3000.N63418,'NACA 63-418 - Power Spectrum','Interpreter','latex')
+ylimit ={[0 4E-3], [0 4E-3],[0 8E-3], [0 8E-3], [0 6E-3], [0 6E-3]};
+for i = 17:22
+    nexttile
+    hold on
+    plot(results.Background_off.fspan,results.(fn_main{i}).normalized_filter_P)
+    xlabel('Frequency [Hz]')
+    xlim(xlimit)
+    ylim(ylimit{i-16})
+    xline(h_fan,'--r')
+    xline(h_blade,'--g')
+    title(graph(i-16))
+    hold off
+end
+print('norm_filtered_power_63418','-depsc')
+
+figure()
+graphmaker3000.N64421 = tiledlayout(3,2);
+title(graphmaker3000.N64421,'NACA 64-421 - Power Spectrum','Interpreter','latex')
+ylimit = {[0 4E-3], [0 4E-3], [0 6E-3], [0 6E-3], [0 8E-3], [0 8E-3]};
+for i = 23:28
+    nexttile
+    hold on
+    plot(results.Background_off.fspan,results.(fn_main{i}).normalized_filter_P)
+    xlabel('Frequency [Hz]')
+    xlim(xlimit)
+    ylim(ylimit{i-22})
+    xline(h_fan,'--r')
+    xline(h_blade,'--g')
+    title(graph(i-22))
+    hold off
+end
+print('norm_filtered_power_64421','-depsc')
+
+
+%% Power plots comparison xlim([0 800])
+xlimit = [0 700];
+
+figure()
+graphmaker3000.N0012 = tiledlayout(3,2);
+title(graphmaker3000.N0012,'NACA 0012 - Power Spectrum','Interpreter','latex')
+%ylimit = {[0 0.075], [0 0.075], [0 0.075], [0 0.075], [0 0.075], [0 0.075]};
+ylimit = ([0 1]);
 for i = 5:10
     nexttile
     hold on
     plot(results.Background_off.fspan,results.(fn_main{i}).normalized_P)
     plot(results.Background_off.fspan,results.(fn_main{2}).normalized_P)
-    %plot(results.Background_off.fspan,results.(fn_main{i}).filtered_P)
     xlabel('Frequency [Hz]')
     xlim(xlimit)
+    ylim(ylimit)
+    %ylim(ylimit{i-4})
     title(graph(i-4))
-    %xline(h_fan,'--r')
-    %xline(h_blade,'--g')
+    grid minor
     hold off
 end
-print('power_0012','-depsc')
+print('comparison_norm_power_0012','-depsc')
 
 figure()
 graphmaker3000.N5512 = tiledlayout(3,2);
@@ -105,15 +248,14 @@ for i = 11:16
     hold on
     plot(results.Background_off.fspan,results.(fn_main{i}).normalized_P)
     plot(results.Background_off.fspan,results.(fn_main{2}).normalized_P)
-    %plot(results.Background_off.fspan,results.(fn_main{i}).filtered_P)
     xlabel('Frequency [Hz]')
     xlim(xlimit)
+    ylim(ylimit)
     title(graph(i-10))
-    %xline(h_fan,'--r')
-    %xline(h_blade,'--g')
+    grid minor
     hold off
 end
-print('power_5512','-depsc')
+print('comparison_norm_power_5512','-depsc')
 
 figure()
 graphmaker3000.N63418 = tiledlayout(3,2);
@@ -123,15 +265,14 @@ for i = 17:22
     hold on
     plot(results.Background_off.fspan,results.(fn_main{i}).normalized_P)
     plot(results.Background_off.fspan,results.(fn_main{2}).normalized_P)
-    %plot(results.Background_off.fspan,results.(fn_main{i}).filtered_P)
     xlabel('Frequency [Hz]')
     xlim(xlimit)
-    %xline(h_fan,'--r')
-    %xline(h_blade,'--g')
+    ylim(ylimit)
     title(graph(i-16))
+    grid minor
     hold off
 end
-print('power_63418','-depsc')
+print('comparison_norm_power_63418','-depsc')
 
 figure()
 graphmaker3000.N64421 = tiledlayout(3,2);
@@ -141,15 +282,14 @@ for i = 23:28
     hold on
     plot(results.Background_off.fspan,results.(fn_main{i}).normalized_P)
     plot(results.Background_off.fspan,results.(fn_main{2}).normalized_P)
-    %plot(results.Background_off.fspan,results.(fn_main{i}).filtered_P)
     xlabel('Frequency [Hz]')
     xlim(xlimit)
-    %xline(h_fan,'--r')
-    %xline(h_blade,'--g')
+    ylim(ylimit)
     title(graph(i-22))
+    grid minor
     hold off
 end
-print('power_64421','-depsc')
+print('comparison_norm_power_64421','-depsc')
 
 %% Normalized Power plots ZOOM (xlim [35 55])
   
@@ -166,8 +306,7 @@ for i = 5:10
     xlabel('Frequency [Hz]')
     xlim(xlimit)
     title(graph(i-4))
-    %xline(h_fan,'--r')zf
-    %xline(h_blade,'--g')
+    grid minor
     hold off
 end
 print('zoom_power_0012','-depsc')
@@ -185,8 +324,7 @@ for i = 11:16
     xlim(xlimit)
     ylim(ylimit{i-10})
     title(graph(i-10))
-    %xline(h_fan,'--r')
-    %xline(h_blade,'--g')
+    grid minor
     hold off
 end
 print('zoom_power_5512','-depsc')
@@ -203,9 +341,8 @@ for i = 17:22
     xlabel('Frequency [Hz]')
     xlim(xlimit)
     ylim(ylimit{i-16})
-    %xline(h_fan,'--r')
-    %xline(h_blade,'--g')
     title(graph(i-16))
+    grid minor
     hold off
 end
 print('zoom_power_63418','-depsc')
@@ -222,9 +359,8 @@ for i = 23:28
     xlabel('Frequency [Hz]')
     xlim(xlimit)
     ylim(ylimit{i-22})
-    %xline(h_fan,'--r')
-    %xline(h_blade,'--g')
     title(graph(i-22))
+    grid minor
     hold off
 end
 print('zoom_power_64421','-depsc')
