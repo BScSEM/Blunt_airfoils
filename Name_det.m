@@ -21,8 +21,8 @@ flow = 'Untripped';
     elseif 10<i && i<17 % 5512
         Airfoil = 'NACA 5512 ';
 
-    elseif 16<i && i<23 % 63-318
-        Airfoil = 'NACA 63-318 ';
+    elseif 16<i && i<23 % 63-418
+        Airfoil = 'NACA 63-418 ';
 
     else    % 64-421
         Airfoil = 'NACA 64-421 ';
@@ -39,8 +39,8 @@ flow = 'Tripped';
     elseif 10+24<i && i<17+24 % 5512
         Airfoil = 'NACA 5512 ';
 
-    elseif 16+24<i && i<23+24 %63-318
-        Airfoil = 'NACA 63-318 ';
+    elseif 16+24<i && i<23+24 %63-418
+        Airfoil = 'NACA 63-418 ';
 
     else    % 64-421
         Airfoil = 'NACA 64-421 ';
