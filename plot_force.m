@@ -37,7 +37,7 @@ legend('Blunt','Standard','interpreter','latex',Location='northwest')
 xlim([0 16])
 grid
 xticks([1 5 9 13]);
-xticklabels({'0012','5512','63-318','64-421'})
+xticklabels({'0012','5512','63-418','64-421'})
 ylabel('Lift [N]')
 hold off
 print('mean_lift_A0_Te_comparison', '-depsc');  
@@ -64,7 +64,7 @@ end
 legend('Blunt','Standard','interpreter','latex',Location='northwest')
 xlim([0 16])
 xticks([2 6 10 14]);
-xticklabels({'0012','5512','63-318','64-421'})
+xticklabels({'0012','5512','63-418','64-421'})
 grid
 ylabel('Lift [N]')
 hold off
@@ -94,7 +94,7 @@ legend('Blunt','Standard','interpreter','latex',Location='northwest')
 xlim([0 16])
 grid
 xticks([1 5 9 13]);
-xticklabels({'0012','5512','63-318','64-421'})
+xticklabels({'0012','5512','63-418','64-421'})
 ylabel('Drag [N]')
 ylim([1 2])
 hold off
@@ -122,7 +122,7 @@ end
 legend('Blunt','Standard','interpreter','latex',Location='northwest')
 xlim([0 16])
 xticks([2 6 10 14]);
-xticklabels({'0012','5512','63-318','64-421'})
+xticklabels({'0012','5512','63-418','64-421'})
 grid
 ylabel('Drag [N]')
 hold off

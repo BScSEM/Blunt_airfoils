@@ -1,4 +1,4 @@
-function [results] = Audio_vis(data,fs,test,option,i)
+function [results] = Audio_vis(data,fs,test,option,i,reference)
 % Performs Fast Fourier transform on input data, plots data with respect to
 % time, plots power sptectrum in log and non-log format
 % Input:
@@ -15,7 +15,6 @@ function [results] = Audio_vis(data,fs,test,option,i)
 
 % Determine name
 Name = Name_det(option,i);
-
 
 
 % Variables of data
@@ -54,6 +53,8 @@ YP = FT(1:floor(N/2));
 % Determine power
 P = abs(YP).^2;
 
+% Convert to SPL
+[P] = Audio_SPL_cont(P,reference);
 
 %% FFT plot
 if option.fft == 1
@@ -84,7 +85,8 @@ end
 %% FFT loglog
 if option.loglog == 1
 figure()
-loglog(fspan,P)
+% loglog(fspan,P)
+semilogx(fspan,P)
 title(Name)
 xlabel('Frequency [Hz]')
 ylabel('Power')

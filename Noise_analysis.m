@@ -179,7 +179,7 @@ fn_main = fieldnames(main);
 fs = main.(fn_main{1}).fs;
 
 for i = 1:length(fn_main)
-    results.(fn_main{i}) = Audio_vis(main.(fn_main{i}).data,main.(fn_main{i}).fs,fn_main(i),option,i);
+    results.(fn_main{i}) = Audio_vis(main.(fn_main{i}).data,main.(fn_main{i}).fs,fn_main(i),option,i,reference);
     % plot recording, FFT and loglog FFT
 end
 

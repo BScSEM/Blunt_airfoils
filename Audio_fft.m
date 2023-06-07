@@ -46,6 +46,9 @@ YP = FT(1:N/2);
 % Determine power
 P = abs(YP).^2;
 
+% Convert to SPL
+P = Audio_SPL(P,reference)
+
 % Figure
 figure()
 stem(fspan,P,'.','MarkerFaceColor','blue','MarkerSize',15)
