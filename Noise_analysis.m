@@ -8,19 +8,15 @@ clc,clear,close all
 %% Options
 % Set to 1 to activate
 
-option.save = 0;    % Only implemented some places
+option.save = 1;    % Only implemented some places
 
 option.print = 0;
 
 % Include types of tests
 option.background = 1;
-
 option.untriped = 0;
 option.tripped = 0;
-
-option.untriped = 1;
-option.tripped = 0;
-option.vsf = 1;
+option.vsf = 0;
 
 % Plot options
 option.recording = 1;
@@ -30,10 +26,9 @@ option.recording_tiled = 0;
 option.fft_tiled = 0;
 option.loglog_tiled = 0;
 option.SPL = 0;
-option.gm3k = 1;
+option.gm3k = 0;
 
-
-option.filter = 1;
+option.filter = 0;
 
 
 %% Import data audio data

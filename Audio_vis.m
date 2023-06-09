@@ -57,9 +57,6 @@ P = abs(YP).^2;
 [P] = Audio_SPL_cont(P,reference);
 
 
-if i  == 1
-    P = abs(P);
-end
 %% FFT plot
 if option.fft == 1
 figure()
@@ -76,6 +73,9 @@ ylabel('SPL dB')
 grid
 xlim([0 0.15e4])
 ylim([0 100])
+if i  == 1
+    ylim([-220 0])
+end
 if option.save == 1
 print(append('Power_spectrum_',num2str(i)), '-depsc');  
 end
